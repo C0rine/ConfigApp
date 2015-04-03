@@ -6,26 +6,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+
+
+    private EditText userNameEditText;
+    private Button answerYesButton;
+    private TextView firstTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView firstTextView = (TextView) findViewById(R.id.textView);
+        firstTextView = (TextView) findViewById(R.id.textView);
+        answerYesButton = (Button) findViewById(R.id.kittenButton);
+        userNameEditText = (EditText) findViewById(R.id.username);
 
-        Button kittenButton = (Button) findViewById(R.id.kittenButton);
 
-        kittenButton.setOnClickListener(new View.OnClickListener() {
+        /*kittenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 firstTextView.setText("Yay for kittens!");
             }
-        });
+        });*/
     }
 
 
@@ -49,5 +57,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onButtonClick(View view) {
+
+        String usersName = String.valueOf(userNameEditText.getText());
+        String yay = usersName + " <3 kittens!";
+
+        Toast.makeText(this, yay, Toast.LENGTH_SHORT).show();
     }
 }

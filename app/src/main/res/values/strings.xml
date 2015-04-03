@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="buttontext">I agree kittens are the best!</string>
+    <string name="uppertext">Kitty love, kitty life</string>
 </resources>
